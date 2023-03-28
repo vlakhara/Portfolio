@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--light);
+  padding: 3rem;
+  z-index: 99;
+  background-color: var(--black);
+}
+.title {
+  display: flex;
+  gap: 0.3rem;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  background-color: var(--IRed);
+  transition: all 0.5s ease-in-out;
+  border-radius: 0.3rem;
+  color: var(--black);
+  padding: 0rem 1rem;
+  text-align: center;
+}
+
+.title:hover {
+  background-color: var(--black);
+  color: var(--IRed);
+  text-align: center;
+  font-weight: 800;
+}
+.navLinks {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navItem > a {
+  text-decoration: none;
+  color: var(--IRed);
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  transition: all 0.1s ease-in;
+  text-align: center;
+  transition: all 0.3s ease-in;
+}
+
+.navItem:after {
+  content: "";
+  float: left;
+  background: var(--IRed);
+  margin-top: 0.2rem;
+  width: 0%;
+  height: 6px;
+  border-radius: 0px 3px 3px 0px;
+  transition: all 0.3s ease-in;
+}
+.navItem:hover:after {
+  width: 100%;
+}
+.navItem.active:after {
+  width: 100%;
+}
+.navItem:not(.active) {
+  opacity: 0.8;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.1rem;
+  min-height: 1.5rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transform-origin: center;
+}
+.top,
+.middle,
+.bottom {
+  height: 0.3rem;
+  width: 100%;
+  background-color: var(--IRed);
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+}
+.close > .middle {
+  display: none;
+}
+.close {
+  justify-content: center;
+}
+.close > .top {
+  transform-origin: center;
+  transform: rotate(-45deg) translate(0, 0.2rem);
+}
+.close > .bottom {
+  transform-origin: center;
+  transform: rotate(45deg) translate(0, -0.17rem);
+}
+@media (max-width: 1100px) {
+  .title {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+  }
+  .navItem > a {
+    font-size: 0.7rem;
+  }
+  .navLinks {
+    width: 60%;
+  }
+}
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
