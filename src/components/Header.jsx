@@ -40,7 +40,7 @@ const Header = ({ mouseEnter, mouseLeave }) => {
     <div className="header">
       <div
         className="title"
-        onMouseEnter={() => mouseEnter("headerText")}
+        onMouseEnter={() => mouseEnter("link")}
         onMouseLeave={mouseLeave}
       >
         <p>V</p>
@@ -52,7 +52,7 @@ const Header = ({ mouseEnter, mouseLeave }) => {
             <li
               key={item.label}
               className={item.class}
-              onMouseEnter={() => mouseEnter("headerText")}
+              onMouseEnter={() => mouseEnter("link")}
               onMouseLeave={mouseLeave}
             >
               <a

@@ -22,11 +22,11 @@ const App = () => {
 
   const variants = {
     default: { left: mousePosition.x - 16, top: mousePosition.y - 16 },
-    headerText: {
-      height: 100,
-      width: 100,
-      left: mousePosition.x - 50,
-      top: mousePosition.y - 50,
+    link: {
+      height: 50,
+      width: 50,
+      left: mousePosition.x - 25,
+      top: mousePosition.y - 25,
       backgroundColor: "var(--light)",
       mixBlendMode: "difference",
     },
