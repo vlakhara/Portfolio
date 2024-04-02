@@ -16,21 +16,10 @@
   font-weight: 900;
   font-size: 2rem;
   letter-spacing: 0.3rem;
-  cursor: pointer;
-  background-color: var(--IRed);
-  transition: all 0.5s ease-in-out;
-  border-radius: 0.3rem;
-  color: var(--black);
-  padding: 0rem 1rem;
+  color: var(--light);
   text-align: center;
 }
 
-.title:hover {
-  background-color: var(--black);
-  color: var(--IRed);
-  text-align: center;
-  font-weight: 800;
-}
 .navLinks {
   width: 50%;
   display: flex;
@@ -39,7 +28,7 @@
 }
 .navItem > a {
   text-decoration: none;
-  color: var(--IRed);
+  color: var(--light);
   font-size: 0.9rem;
   letter-spacing: 0.2rem;
   font-weight: 700;
@@ -51,7 +40,7 @@
 .navItem:after {
   content: "";
   float: left;
-  background: var(--IRed);
+  background: var(--light);
   margin-top: 0.2rem;
   width: 0%;
   height: 6px;
@@ -83,7 +72,7 @@
 .bottom {
   height: 0.3rem;
   width: 100%;
-  background-color: var(--IRed);
+  background-color: var(--light);
   transition: all 0.3s ease-in;
   transition-delay: 0.2s;
 }

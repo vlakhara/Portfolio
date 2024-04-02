@@ -12,17 +12,32 @@
   list-style: none;
   scroll-behavior: smooth;
   user-select: none;
+  cursor: none;
 }
 body {
-  background-color: var(--black);
   font-family: "Poppins", sans-serif;
+}
+.app {
+  background-color: var(--black);
 }
 
 ::-webkit-scrollbar {
   background-color: var(--black);
-  width: 12px;
+  width: 2px;
   cursor: pointer !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--IRed);
+  background-color: var(--light);
+}
+
+.cursor {
+  background-color: #fff;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
 }

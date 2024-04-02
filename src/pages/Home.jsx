@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Home = () => {
+const Home = ({ mouseEnter, mouseLeave }) => {
   return (
     <div
       id="Introduction"
@@ -12,9 +12,19 @@ const Home = () => {
         color: "white",
       }}
     >
-      Home
+      <p
+        style={{
+          fontSize: "100px",
+          fontWeight: "bolder",
+          letterSpacing: "5px",
+        }}
+        onMouseEnter={() => mouseEnter("name")}
+        onMouseLeave={mouseLeave}
+      >
+        Vipul Lakhara
+      </p>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
