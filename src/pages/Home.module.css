@@ -1,7 +1,6 @@
 .home {
   height: 100vh;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   color: var(--light);
@@ -21,17 +20,6 @@
   transition: all 1s;
 }
 
-.name > .text > .dot {
-  height: 12px;
-  width: 12px;
-  position: absolute;
-  right: -15px;
-  top: 65px;
-  background-color: var(--light);
-  animation: blink 1s infinite alternate-reverse;
-  border-radius: 50%;
-}
-
 .discription > .disc-text {
   padding-left: 100px;
   width: max-content;
@@ -39,15 +27,6 @@
   font-weight: 600;
   letter-spacing: 2px;
   transition: all 1s;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 650px) {
@@ -68,9 +47,8 @@
     margin: 0 auto;
   }
   .discription > .disc-text {
-    padding-left: 0;
     font-size: 15px;
-    padding-top: 10px;
+    padding-left: 0;
     margin: 0 auto;
   }
 }

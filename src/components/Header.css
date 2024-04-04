@@ -38,7 +38,7 @@
   transition: all 0.3s ease-in;
 }
 
-.navItem:after {
+/* .navItem:after {
   content: "";
   float: left;
   background: var(--light);
@@ -47,7 +47,7 @@
   height: 2px;
   border-radius: 0px 3px 3px 0px;
   transition: all 0.3s ease-in;
-}
+} */
 .navItem:hover:after {
   width: 100%;
 }

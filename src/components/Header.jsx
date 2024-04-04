@@ -1,22 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
-import "./Header.css";
-import { CursorContext } from "../Context";
 import { motion } from "framer-motion";
+import React, { useContext, useState } from "react";
+import { CursorContext } from "../Context";
+import "./Header.css";
 const Header = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
 
-  const [offset, setOffset] = useState(window.scrollY);
   const classes = {
     normal: "navItem",
     active: "navItem active",
   };
 
-  window.addEventListener("scroll", () => {
-    setOffset(window.scrollY);
-  });
   const [burgerClass, setBurgerClass] = useState("burger");
   const [menuItems, setMenuItems] = useState([
-    { label: "Introduction", class: classes.active },
+    { label: "Introduction", class: classes.normal },
     { label: "Projects", class: classes.normal },
     { label: "Experience", class: classes.normal },
     { label: "Connect", class: classes.normal },
@@ -28,17 +24,6 @@ const Header = () => {
       setBurgerClass("burger close");
     }
   };
-  useEffect(() => {
-    setMenuItems((prev) =>
-      prev.map((newItem, index) => {
-        if (index === Math.floor(offset / 650)) {
-          return { ...newItem, class: classes.active };
-        } else {
-          return { ...newItem, class: classes.normal };
-        }
-      })
-    );
-  }, [offset, classes.active, classes.normal]);
 
   return (
     <div className="header">
@@ -59,11 +44,11 @@ const Header = () => {
               onMouseEnter={() => mouseEnter("link")}
               onMouseLeave={mouseLeave}
               initial={{ translateY: -30, opacity: 0 }}
-              animate={{ opacity: 1, translateY: 0 }}
+              animate={{ translateY: 0, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                delay: (index * 2.5) / 10,
-                type: "spring",
+                delay: (index * 3) / 10,
+                ease: "anticipate",
               }}
             >
               <a
