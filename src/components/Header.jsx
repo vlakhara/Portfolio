@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Header.css";
-const Header = ({ mouseEnter, mouseLeave }) => {
+import { CursorContext } from "../Context";
+import { motion } from "framer-motion";
+const Header = () => {
+  const { mouseEnter, mouseLeave } = useContext(CursorContext);
+
   const [offset, setOffset] = useState(window.scrollY);
   const classes = {
     normal: "navItem",
@@ -49,11 +53,18 @@ const Header = ({ mouseEnter, mouseLeave }) => {
       <ul className="navLinks">
         {menuItems.map((item, index) => {
           return (
-            <li
+            <motion.li
               key={item.label}
               className={item.class}
               onMouseEnter={() => mouseEnter("link")}
               onMouseLeave={mouseLeave}
+              initial={{ translateY: -30, opacity: 0 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: (index * 2.5) / 10,
+                type: "spring",
+              }}
             >
               <a
                 href={`#${item.label}`}
@@ -71,7 +82,7 @@ const Header = ({ mouseEnter, mouseLeave }) => {
               >
                 0{index + 1}. {item.label}
               </a>
-            </li>
+            </motion.li>
           );
         })}
       </ul>

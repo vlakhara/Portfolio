@@ -1,32 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { CursorContext } from "./Context";
 import Header from "./components/Header";
 import Home from "./pages/Home";
-import { motion } from "framer-motion";
 
 const App = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState("default");
-
-  useEffect(() => {
-    const mouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
-  }, []);
-
-  const getCommonCursorStyle = (reduce = 0) => ({});
+  const { cursorVariant, mousePosition } = useContext(CursorContext);
 
   const variants = {
     default: { left: mousePosition.x - 16, top: mousePosition.y - 16 },
     link: {
-      height: 50,
-      width: 50,
-      left: mousePosition.x - 25,
-      top: mousePosition.y - 25,
+      height: 60,
+      width: 60,
+      left: mousePosition.x - 30,
+      top: mousePosition.y - 30,
       backgroundColor: "var(--light)",
       mixBlendMode: "difference",
     },
@@ -40,18 +26,16 @@ const App = () => {
     },
   };
 
-  const mouseEnter = (type) => {
-    setCursorVariant(type);
-  };
-  const mouseLeave = () => {
-    setCursorVariant("default");
-  };
-
   return (
-    <div className="app">
+    <div
+      className="app"
+      onContextMenu={() => {
+        return null;
+      }}
+    >
       <div className="cursor" style={{ ...variants[cursorVariant] }}></div>
-      <Header mouseEnter={mouseEnter} mouseLeave={mouseLeave} />
-      <Home mouseEnter={mouseEnter} mouseLeave={mouseLeave} />
+      <Header />
+      <Home />
       <div
         id="Projects"
         style={{
