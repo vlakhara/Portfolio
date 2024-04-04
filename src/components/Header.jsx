@@ -65,7 +65,8 @@ const Header = () => {
                   );
                 }}
               >
-                0{index + 1}. {item.label}
+                <p className="nav-index">0{index + 1}.</p>
+                {item.label}
               </a>
             </motion.li>
           );

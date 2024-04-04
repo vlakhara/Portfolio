@@ -27,6 +27,8 @@
   justify-content: space-around;
 }
 .navItem > a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--light);
   font-size: 0.9rem;
@@ -36,6 +38,14 @@
   transition: all 0.1s ease-in;
   text-align: center;
   transition: all 0.3s ease-in;
+  gap: 2px;
+}
+
+.navItem > a > .nav-index {
+  display: inline-block;
+  background-color: var(--light);
+  padding-left: 3px;
+  color: var(--black);
 }
 
 /* .navItem:after {
