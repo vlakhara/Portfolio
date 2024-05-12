@@ -84,11 +84,6 @@ const Navbar = () => {
           );
         })}
       </ul>
-      {/* <div className={burgerClass} onClick={handleBurgerClick}>
-        <div className="top"></div>
-        <div className="middle"></div>
-        <div className="bottom"></div>
-      </div> */}
     </div>
   );
 };

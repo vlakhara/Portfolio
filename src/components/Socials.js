@@ -9,7 +9,7 @@ import React, { useContext } from "react";
 import { CursorContext } from "../Context";
 
 const Socials = () => {
-  const { mouseEnter, mouseLeave, mousePosition } = useContext(CursorContext);
+  const { mouseEnter, mouseLeave } = useContext(CursorContext);
 
   const linkIcons = [
     { icon: faLinkedin, label: "LinkedIn" },
