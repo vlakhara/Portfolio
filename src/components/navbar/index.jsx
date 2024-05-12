@@ -12,26 +12,19 @@ const classes = {
 const Navbar = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
   const [show, setShow] = useState(true);
-  const [menuItems, setMenuItems] = useState([
+  const menuItems = [
     { label: "Introduction", class: classes.normal },
     { label: "Skills", class: classes.normal },
     { label: "Projects", class: classes.normal },
     { label: "Experience", class: classes.normal },
     { label: "Connect", class: classes.normal },
-  ]);
+  ];
 
   const controlNavbar = () => {
     if (window.scrollY > 250) {
       setShow(false);
     } else {
       setShow(true);
-      setMenuItems([
-        { label: "Introduction", class: classes.normal },
-        { label: "Skills", class: classes.normal },
-        { label: "Projects", class: classes.normal },
-        { label: "Experience", class: classes.normal },
-        { label: "Connect", class: classes.normal },
-      ]);
     }
   };
 
@@ -74,15 +67,6 @@ const Navbar = () => {
                 href={"#" + item.label}
                 onClick={() => {
                   scrollToTop(item.label);
-                  setMenuItems((prev) =>
-                    prev.map((newItem) => {
-                      if (item.label === newItem.label) {
-                        return { ...newItem, class: classes.active };
-                      } else {
-                        return { ...newItem, class: classes.normal };
-                      }
-                    })
-                  );
                 }}
               >
                 <p className="nav-marker">0{index + 1}.</p> {item.label}

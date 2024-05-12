@@ -46,6 +46,7 @@ body {
   left: 0;
   z-index: 100;
   pointer-events: none;
+  transition: height 400ms ease, width 400ms ease;
 }
 
 .marker {
@@ -126,6 +127,18 @@ body {
 
 .about-skill:not(.first) {
   margin-left: 15px;
+}
+
+.more {
+  color: var(--IRed);
+  margin-left: 9px;
+  text-decoration: none;
+  border-bottom: 0px solid var(--IRed);
+  transition: border 100ms ease, color 100ms ease;
+}
+
+.more:hover {
+  border-bottom: 2px solid var(--IRed);
 }
 
 @media (max-width: 650px) {

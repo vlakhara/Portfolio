@@ -1,18 +1,7 @@
-import React, { useContext } from "react";
-import { CursorContext } from "../Context";
+import React from "react";
 
-const Content = ({ cVariant, children }) => {
-  const { mouseEnter, mouseLeave } = useContext(CursorContext);
-
-  return (
-    <div
-      className="content"
-      onMouseEnter={() => mouseEnter(cVariant)}
-      onMouseLeave={mouseLeave}
-    >
-      {children}
-    </div>
-  );
+const Content = ({ children }) => {
+  return <div className="content">{children}</div>;
 };
 
 export default Content;
