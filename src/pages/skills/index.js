@@ -7,7 +7,7 @@ const Skills = () => {
   return (
     <Header id="Skills">
       <Title id="Skills" page={2} />
-      <Content cVariant="skills">
+      <Content cVariant="link">
         <p className="spaced-text">
           Which languages, frameworks, libraries and tools do I know ?
         </p>

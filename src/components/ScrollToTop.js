@@ -21,7 +21,7 @@ const ScrollToTop = () => {
         alignItems: "center",
         justifyContent: "center",
       }}
-      onMouseEnter={() => mouseEnter("link")}
+      onMouseEnter={() => mouseEnter("scrollToTop")}
       onMouseLeave={mouseLeave}
     >
       <a href="#home" onClick={() => scrollToTop("home")}>

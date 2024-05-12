@@ -25,6 +25,13 @@ const Navbar = () => {
       setShow(false);
     } else {
       setShow(true);
+      setMenuItems([
+        { label: "Introduction", class: classes.normal },
+        { label: "Skills", class: classes.normal },
+        { label: "Projects", class: classes.normal },
+        { label: "Experience", class: classes.normal },
+        { label: "Connect", class: classes.normal },
+      ]);
     }
   };
 
@@ -53,7 +60,7 @@ const Navbar = () => {
             <motion.li
               key={item.label}
               className={item.class}
-              onMouseEnter={() => mouseEnter("link")}
+              onMouseEnter={() => mouseEnter("navItem")}
               onMouseLeave={mouseLeave}
               initial={{ translateY: -30, opacity: 0 }}
               animate={{ translateY: 0, opacity: 1 }}

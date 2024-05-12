@@ -12,7 +12,7 @@ const Title = ({ id, page }) => {
       onMouseLeave={mouseLeave}
     >
       <p className="marker">
-        <a onClick={() => scrollToTop(id)}>#{page}</a>
+        <span onClick={() => scrollToTop(id)}>#{page}</span>
       </p>
       <p className="title">{id}</p>
     </div>
