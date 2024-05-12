@@ -1,7 +1,7 @@
 import React from "react";
+import Content from "../../components/Content";
 import Header from "../../components/Header";
 import Title from "../../components/Title";
-import Content from "../../components/Content";
 
 const Skills = () => {
   return (

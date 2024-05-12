@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import { CursorContext } from "../../Context";
 import Styles from "./Home.module.css";
-import { motion } from "framer-motion";
 
 const Home = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { CursorContext } from "../../Context";
-import "./navbar.css";
 import { scrollToTop } from "../../utils";
+import "./navbar.css";
 
 const classes = {
   normal: "navItem",
@@ -12,7 +12,6 @@ const classes = {
 const Navbar = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
   const [show, setShow] = useState(true);
-  const [burgerClass, setBurgerClass] = useState("burger");
   const [menuItems, setMenuItems] = useState([
     { label: "Introduction", class: classes.normal },
     { label: "Skills", class: classes.normal },
@@ -20,14 +19,6 @@ const Navbar = () => {
     { label: "Experience", class: classes.normal },
     { label: "Connect", class: classes.normal },
   ]);
-
-  const handleBurgerClick = () => {
-    if (burgerClass.includes("close")) {
-      setBurgerClass("burger");
-    } else {
-      setBurgerClass("burger close");
-    }
-  };
 
   const controlNavbar = () => {
     if (window.scrollY > 250) {

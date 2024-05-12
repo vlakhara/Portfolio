@@ -1,12 +1,8 @@
-import { useContext } from "react";
-import { CursorContext } from "../../Context";
+import Content from "../../components/Content";
 import Header from "../../components/Header";
 import Title from "../../components/Title";
-import Content from "../../components/Content";
 
 const About = () => {
-  const { mouseEnter, mouseLeave } = useContext(CursorContext);
-
   return (
     <Header id="Introduction">
       <Title id="Introduction" page={1} />

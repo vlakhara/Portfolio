@@ -21,14 +21,15 @@ const ScrollToTop = () => {
         alignItems: "center",
         justifyContent: "center",
       }}
-      onClick={() => scrollToTop("home")}
       onMouseEnter={() => mouseEnter("link")}
       onMouseLeave={mouseLeave}
     >
-      <FontAwesomeIcon
-        style={{ color: "var(--IRed)", opacity: 1, fontSize: "18px" }}
-        icon={faAngleDoubleUp}
-      />
+      <a href="#home" onClick={() => scrollToTop("home")}>
+        <FontAwesomeIcon
+          style={{ color: "var(--IRed)", opacity: 1, fontSize: "18px" }}
+          icon={faAngleDoubleUp}
+        />
+      </a>
     </div>
   );
 };
