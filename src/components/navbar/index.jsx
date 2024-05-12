@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
-import React, { useContext, useState } from "react";
-import { CursorContext } from "../Context";
-import "./Header.css";
-const Header = () => {
+import React, { useContext, useEffect, useState } from "react";
+import { CursorContext } from "../../Context";
+import "./navbar.css";
+import { scrollToTop } from "../../utils";
+
+const classes = {
+  normal: "navItem",
+  active: "navItem active",
+};
+
+const Navbar = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
-
-  const classes = {
-    normal: "navItem",
-    active: "navItem active",
-  };
-
+  const [show, setShow] = useState(true);
   const [burgerClass, setBurgerClass] = useState("burger");
   const [menuItems, setMenuItems] = useState([
     { label: "Introduction", class: classes.normal },
+    { label: "Skills", class: classes.normal },
     { label: "Projects", class: classes.normal },
     { label: "Experience", class: classes.normal },
     { label: "Connect", class: classes.normal },
   ]);
+
   const handleBurgerClick = () => {
     if (burgerClass.includes("close")) {
       setBurgerClass("burger");
@@ -25,15 +29,32 @@ const Header = () => {
     }
   };
 
+  const controlNavbar = () => {
+    if (window.scrollY > 250) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
+
   return (
-    <div className="header">
+    <div className="navbar" id="navbar" style={{ top: show ? "0" : "-9vh" }}>
       <div
         className="title"
         onMouseEnter={() => mouseEnter("link")}
         onMouseLeave={mouseLeave}
       >
-        <p>V</p>
-        <p>L</p>
+        <a href="#home">
+          <p>V</p>
+          <p>L</p>
+        </a>
       </div>
       <ul className="navLinks">
         {menuItems.map((item, index) => {
@@ -52,8 +73,9 @@ const Header = () => {
               }}
             >
               <a
-                href={`#${item.label}`}
+                href={"#" + item.label}
                 onClick={() => {
+                  scrollToTop(item.label);
                   setMenuItems((prev) =>
                     prev.map((newItem) => {
                       if (item.label === newItem.label) {
@@ -65,19 +87,19 @@ const Header = () => {
                   );
                 }}
               >
-                0{index + 1}. {item.label}
+                <p className="nav-marker">0{index + 1}.</p> {item.label}
               </a>
             </motion.li>
           );
         })}
       </ul>
-      <div className={burgerClass} onClick={handleBurgerClick}>
+      {/* <div className={burgerClass} onClick={handleBurgerClick}>
         <div className="top"></div>
         <div className="middle"></div>
         <div className="bottom"></div>
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default Header;
+export default Navbar;

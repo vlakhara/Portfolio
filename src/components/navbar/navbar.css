@@ -1,4 +1,4 @@
-.header {
+.navbar {
   position: fixed;
   width: 100vw;
   height: 8vh;
@@ -9,21 +9,28 @@
   padding: 3rem;
   z-index: 99;
   background-color: var(--black);
+  transition: all 0.5s ease;
 }
 .title {
   display: flex;
   gap: 0.3rem;
-  font-weight: 900;
-  font-size: 2rem;
-  letter-spacing: 0.3rem;
-  color: var(--light);
   text-align: center;
 }
 
-.navLinks {
-  width: 50%;
+.title > a {
+  text-decoration: none;
   display: flex;
-  align-items: center;
+  color: inherit;
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  color: var(--IRed);
+}
+
+.navLinks {
+  width: 60%;
+  display: flex;
+  align-items: flex-start;
   justify-content: space-around;
 }
 .navItem > a {
@@ -32,22 +39,14 @@
   font-size: 0.9rem;
   font-family: "Titillium Web";
   letter-spacing: 0.2rem;
-  font-weight: 700;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
   transition: all 0.1s ease-in;
   text-align: center;
   transition: all 0.3s ease-in;
 }
 
-/* .navItem:after {
-  content: "";
-  float: left;
-  background: var(--light);
-  margin-top: 0.2rem;
-  width: 0%;
-  height: 2px;
-  border-radius: 0px 3px 3px 0px;
-  transition: all 0.3s ease-in;
-} */
 .navItem:hover:after {
   width: 100%;
 }
@@ -57,39 +56,18 @@
 .navItem:not(.active) {
   opacity: 0.8;
 }
+.navItem:not(.active) > a {
+  opacity: 0.8;
+  font-weight: 400;
+}
 
-.burger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.1rem;
-  min-height: 1.5rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  transform-origin: center;
+.nav-marker {
+  color: var(--IRed);
 }
-.top,
-.middle,
-.bottom {
-  height: 0.3rem;
-  width: 100%;
-  background-color: var(--light);
-  transition: all 0.3s ease-in;
-  transition-delay: 0.2s;
-}
-.close > .middle {
-  display: none;
-}
-.close {
-  justify-content: center;
-}
-.close > .top {
-  transform-origin: center;
-  transform: rotate(-45deg) translate(0, 0.2rem);
-}
-.close > .bottom {
-  transform-origin: center;
-  transform: rotate(45deg) translate(0, -0.17rem);
+@media (max-width: 1300px) {
+  .navLinks {
+    width: 70%;
+  }
 }
 @media (max-width: 1100px) {
   .title {
@@ -98,9 +76,6 @@
   }
   .navItem > a {
     font-size: 0.7rem;
-  }
-  .navLinks {
-    width: 60%;
   }
 }
 @media (max-width: 900px) {
