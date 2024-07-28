@@ -141,9 +141,21 @@ body {
   border-bottom: 2px solid var(--IRed);
 }
 
+.svgIcon > p {
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
 @media (max-width: 650px) {
   .marker::after,
   .cursor {
+    display: none;
+  }
+  .svgIcon > svg {
+    height: 25px;
+    width: 25px;
+  }
+  .svgIcon > p {
     display: none;
   }
 }
