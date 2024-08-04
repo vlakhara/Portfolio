@@ -16,7 +16,6 @@
   user-select: none;
   cursor: none;
   overflow-x: hidden;
-  mix-blend-mode: exclusion;
 }
 
 body {
