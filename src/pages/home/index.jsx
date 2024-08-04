@@ -23,7 +23,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.25,
-                delay: i / 25 + 1.5,
+                delay: i / 25 + 0.5,
                 ease: "backInOut",
               }}
               style={{ display: "inline-block", fontFamily: "Titillium Web" }}
@@ -46,7 +46,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.1,
-                delay: i / 20 + 2,
+                delay: i / 20 + 1,
                 ease: "backInOut",
               }}
               style={{ display: "inline-block", fontFamily: "Titillium Web" }}

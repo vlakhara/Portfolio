@@ -59,7 +59,7 @@ const Navbar = () => {
               animate={{ translateY: 0, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                delay: (index * 3) / 10,
+                delay: (index * 3) / 25,
                 ease: "anticipate",
               }}
             >

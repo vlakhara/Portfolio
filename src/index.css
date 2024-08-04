@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
 :root {
-  --dark: #060047;
-  --black: #181823;
-  --IRed: #e96479;
-  --light: #ecf2ff;
+  --dark: #45474b;
+  --light: #f5f7f8;
+  --IRed: #f4ce14;
+  --black: #1a2130;
 }
 
 * {
@@ -16,6 +16,7 @@
   user-select: none;
   cursor: none;
   overflow-x: hidden;
+  mix-blend-mode: exclusion;
 }
 
 body {
@@ -37,9 +38,10 @@ body {
 }
 
 .cursor {
-  background-color: #fff;
+  background-color: transparent;
   height: 32px;
   width: 32px;
+  border: 2px solid var(--IRed);
   border-radius: 50%;
   position: fixed;
   top: 0;

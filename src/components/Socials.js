@@ -52,7 +52,7 @@ const Socials = () => {
           animate={{ translateY: 0, opacity: 1 }}
           transition={{
             duration: 0.5,
-            delay: (index * 2) / 10 + 2.5,
+            delay: (index * 2) / 10 + 1,
             ease: "anticipate",
             staggerChildren: 1,
           }}

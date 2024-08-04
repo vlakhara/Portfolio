@@ -50,7 +50,7 @@ const ReactIcon = ({ height = 50, width = 50 }) => {
         </g>
       </svg>
       <p
-        style={{ color: "var(--IRed)", letterSpacing: "2px", fontWeight: 600 }}
+        style={{ color: "var(--light)", letterSpacing: "2px", fontWeight: 600 }}
       >
         React
       </p>
