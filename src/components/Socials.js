@@ -22,16 +22,7 @@ const Socials = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
   return (
-    <div
-      className="links"
-      style={{
-        position: "fixed",
-        bottom: 5,
-        right: 30,
-        display: "flex",
-        gap: "1.5rem",
-      }}
-    >
+    <div className="links">
       {linkIcons.map(({ icon, label, href }, index) => (
         <motion.div
           key={`${label}_${index}`}

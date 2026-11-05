@@ -14,15 +14,7 @@ const Databases = () => {
       <p className="about-skill" style={{ letterSpacing: "3px" }}>
         #&nbsp;Databases and Tools
       </p>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "2rem",
-          marginLeft: "15px",
-        }}
-      >
+      <div className="skill-row">
         <BrandIcon icon={SiPostgresql} label="PostgreSQL" />
         <BrandIcon icon={SiElasticsearch} label="Elasticsearch" />
         <BrandIcon icon={SiMongodb} label="MongoDB" />

@@ -12,15 +12,7 @@ const Frameworks = () => {
       <p className="about-skill" style={{ letterSpacing: "3px" }}>
         #&nbsp;Frameworks and Libraries
       </p>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "2rem",
-          marginLeft: "15px",
-        }}
-      >
+      <div className="skill-row">
         <ReactIcon />
         <BrandIcon icon={SiNextdotjs} label="Next JS" />
         <BrandIcon icon={SiNodedotjs} label="Node JS" />

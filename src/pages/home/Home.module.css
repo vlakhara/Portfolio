@@ -1,5 +1,6 @@
 .home {
   height: 100vh;
+  height: 100svh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -8,47 +9,22 @@
 
 .name,
 .discription {
-  width: 100vw;
+  width: 100%;
+  padding-right: 1rem;
 }
 
 .name > .text {
-  font-size: 70px;
-  width: max-content;
+  font-size: clamp(30px, 9vw, 70px);
   font-weight: 700;
-  letter-spacing: 8px;
-  padding-left: 90px;
+  letter-spacing: clamp(2px, 0.8vw, 8px);
+  padding-left: clamp(1.25rem, 7vw, 90px);
   transition: all 1s;
 }
 
 .discription > .disc-text {
-  padding-left: 100px;
-  width: max-content;
-  font-size: 28px;
+  font-size: clamp(15px, 3.6vw, 28px);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: clamp(1px, 0.25vw, 2px);
+  padding-left: clamp(1.4rem, 7.5vw, 100px);
   transition: all 1s;
-}
-
-@media (max-width: 650px) {
-  .name > .text {
-    font-size: 50px;
-    padding-left: 70px;
-  }
-  .discription > .disc-text {
-    font-size: 15px;
-    padding-left: 80px;
-  }
-}
-
-@media (max-width: 550px) {
-  .name > .text {
-    font-size: 25px;
-    padding-left: 0;
-    margin: 0 auto;
-  }
-  .discription > .disc-text {
-    font-size: 15px;
-    padding-left: 0;
-    margin: 0 auto;
-  }
 }
