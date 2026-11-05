@@ -13,7 +13,7 @@ const BrandIcon = ({ icon: Icon, label, height = 50, width = 50 }) => {
       }}
       className="svgIcon"
     >
-      <Icon height={height} width={width} color="var(--light)" aria-hidden />
+      <Icon size={Math.max(height, width)} color="var(--light)" aria-hidden />
       <p
         style={{ color: "var(--light)", letterSpacing: "2px", fontWeight: 600 }}
       >
