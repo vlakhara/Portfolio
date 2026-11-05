@@ -12,6 +12,7 @@ const classes = {
 const Navbar = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
   const [show, setShow] = useState(true);
+  const [open, setOpen] = useState(false);
   const menuItems = [
     { label: "Introduction", class: classes.normal },
     { label: "Skills", class: classes.normal },
@@ -23,20 +24,30 @@ const Navbar = () => {
   const controlNavbar = () => {
     if (window.scrollY > 250) {
       setShow(false);
+      setOpen(false);
     } else {
       setShow(true);
     }
   };
 
   useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
     window.addEventListener("scroll", controlNavbar);
+    window.addEventListener("keydown", onKeyDown);
     return () => {
       window.removeEventListener("scroll", controlNavbar);
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, []);
 
   return (
-    <div className="navbar" id="navbar" style={{ top: show ? "0" : "-9vh" }}>
+    <div
+      className="navbar"
+      id="navbar"
+      style={{ transform: show ? "translateY(0)" : "translateY(-100%)" }}
+    >
       <div
         className="title"
         onMouseEnter={() => mouseEnter("link")}
@@ -47,7 +58,21 @@ const Navbar = () => {
           <p>L</p>
         </a>
       </div>
-      <ul className="navLinks">
+      <button
+        type="button"
+        className={"burger" + (open ? " open" : "")}
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        aria-controls="nav-links"
+        onClick={() => setOpen((value) => !value)}
+        onMouseEnter={() => mouseEnter("navItem")}
+        onMouseLeave={mouseLeave}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+      <ul id="nav-links" className={"navLinks" + (open ? " open" : "")}>
         {menuItems.map((item, index) => {
           return (
             <motion.li
@@ -67,6 +92,7 @@ const Navbar = () => {
                 href={"#" + item.label}
                 onClick={() => {
                   scrollToTop(item.label);
+                  setOpen(false);
                 }}
               >
                 <p className="nav-marker">0{index + 1}.</p> {item.label}

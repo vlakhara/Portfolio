@@ -9,18 +9,7 @@ const ScrollToTop = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
   return (
     <div
-      style={{
-        position: "fixed",
-        background: "var(--dark)",
-        top: "3rem",
-        right: "3rem",
-        height: "40px",
-        width: "40px",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className="scroll-top"
       onMouseEnter={() => mouseEnter("scrollToTop")}
       onMouseLeave={mouseLeave}
     >

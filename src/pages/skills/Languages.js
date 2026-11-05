@@ -15,14 +15,7 @@ const Languages = () => {
       <p className="about-skill" style={{ letterSpacing: "3px" }}>
         #&nbsp;Languages
       </p>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          gap: "2rem",
-          marginLeft: "15px",
-        }}
-      >
+      <div className="skill-row">
         <JavaScriptIcon />
         <JavaIcon />
         <TypeScriptIcon />

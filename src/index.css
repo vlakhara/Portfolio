@@ -43,9 +43,11 @@ body {
   z-index: 100;
   pointer-events: none;
   will-change: transform;
+  overflow: visible; /* the global * rule would clip the zero-size wrapper */
 }
 
 .cursor-dot {
+  overflow: visible;
   position: absolute;
   top: 0;
   left: 0;
@@ -152,7 +154,7 @@ body {
 /* Projects */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
   max-width: 1000px;
   margin-top: 30px;
@@ -229,22 +231,26 @@ body {
 
 /* Experience */
 .timeline {
+  --tl-pad: 2rem;
   position: relative;
   max-width: 800px;
   margin-top: 30px;
-  padding-left: 2rem;
+  margin-left: 8px; /* room for the dots inside .content's clip box */
+  padding-left: var(--tl-pad);
+  overflow: visible; /* the global * rule would clip the dots */
   border-left: 2px solid rgba(245, 247, 248, 0.2);
 }
 
 .timeline-item {
   position: relative;
+  overflow: visible;
   padding-bottom: 2.5rem;
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: calc(-2rem - 7px);
+  left: calc(-1 * var(--tl-pad) - 7px);
   top: 12px;
   width: 12px;
   height: 12px;
@@ -309,29 +315,106 @@ body {
   font-size: 13px;
 }
 
-@media (max-width: 650px) {
-  .marker::after,
+/* Floating controls */
+.links {
+  position: fixed;
+  bottom: 5px;
+  right: 30px;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.scroll-top {
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 98;
+}
+
+/* Skill rows */
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+/* Hide the custom cursor on touch devices and small screens */
+@media (hover: none), (max-width: 650px) {
   .cursor {
-    display: none;
-  }
-  .svgIcon > svg {
-    height: 25px;
-    width: 25px;
-  }
-  .svgIcon > p {
     display: none;
   }
 }
 
-/* @media (max-width: 550px) {
-  .name > .text {
-    font-size: 25px;
-    padding-left: 0;
-    margin: 0 auto;
+@media (max-width: 900px) {
+  .header {
+    padding: 5.5rem 1.5rem 3rem;
   }
-  .discription > .disc-text {
-    font-size: 15px;
-    padding-left: 0;
-    margin: 0 auto;
+  .scroll-top {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
   }
-} */
+  .links {
+    bottom: 0.5rem;
+    right: 1rem;
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .marker::after {
+    display: none;
+  }
+  .header {
+    padding: 5rem 1.25rem 4rem;
+  }
+  .head {
+    font-size: 22px;
+    letter-spacing: 4px;
+    gap: 14px;
+  }
+  .marker {
+    font-size: 20px;
+  }
+  .content {
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .spaced-text {
+    letter-spacing: 1px;
+  }
+  .intro {
+    margin-top: 24px;
+  }
+  .skill-row {
+    gap: 1.25rem 1.5rem;
+    margin-left: 0;
+  }
+  .svgIcon > svg {
+    height: 36px;
+    width: 36px;
+  }
+  .svgIcon > p {
+    font-size: 11px;
+    letter-spacing: 1px !important;
+  }
+  .cards {
+    gap: 1.25rem;
+  }
+  .card {
+    padding: 1.25rem;
+  }
+  .timeline {
+    --tl-pad: 1.25rem;
+  }
+}
