@@ -74,11 +74,11 @@ export const socialLinks = [
     href: "https://www.linkedin.com/in/vipullakhara/",
   },
   // TODO: add your profile URL, e.g. "https://x.com/<your-handle>"
-  { key: "x", label: "X", href: "" },
+  { key: "x", label: "X", href: "https://x.com/vipullakhara_" },
 ];
 
 // Set this to show an email link in the Contact section.
-export const contactEmail = "";
+export const contactEmail = "vipullakhara18@gmail.com";
 
 // Optional: a few favourites shown as ticket stubs on the movies tile.
 // Example: ["Interstellar", "Whiplash"]

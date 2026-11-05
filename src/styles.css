@@ -1542,6 +1542,7 @@ html.cursor-out .cursor-label {
 
 /* bike */
 .bike {
+  --khaki: #6f7b3e;
   display: block;
   width: 100%;
   height: auto;
@@ -1585,14 +1586,55 @@ html.cursor-out .cursor-label {
   stroke-width: 3;
 }
 
+.bike .knobs {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 7;
+  stroke-dasharray: 1.6 2.6;
+  opacity: 0.55;
+}
+
+.bike .fender {
+  fill: none;
+  stroke: var(--khaki);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
 .bike .engine {
   fill: var(--ink);
 }
 
-.bike .cover {
-  fill: var(--mustard);
+.bike .barrel {
+  fill: #4a4a46;
   stroke: var(--ink);
   stroke-width: 1.5;
+}
+
+.bike .fins {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.2;
+}
+
+.bike .cover {
+  fill: #9a9a92;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.bike .skid {
+  fill: #9a9a92;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.bike .silencer {
+  fill: none;
+  stroke: #9a9a92;
+  stroke-width: 6;
+  stroke-linecap: round;
 }
 
 .bike .seat {
@@ -1603,28 +1645,29 @@ html.cursor-out .cursor-label {
 }
 
 .bike .tank {
-  fill: var(--orange);
+  fill: var(--khaki);
   stroke: var(--ink);
-  stroke-width: 3;
+  stroke-width: 2.5;
   stroke-linejoin: round;
 }
 
+.bike .pad {
+  fill: var(--ink);
+  opacity: 0.8;
+}
+
 .bike .lamp {
-  fill: var(--mustard);
+  fill: #e9e6da;
   stroke: var(--ink);
   stroke-width: 2.5;
 }
 
+.bike .led {
+  fill: var(--mustard);
+}
+
 .bike .wheel {
   transform: rotate(var(--wheel, 0deg));
-}
-
-.fun--bike .bike {
-  --tank: var(--paper);
-}
-
-.fun--bike .bike .tank {
-  fill: var(--paper);
 }
 
 .fun--bike .bike--big {
@@ -1754,7 +1797,7 @@ html.cursor-out .cursor-label {
   position: absolute;
   left: 0;
   bottom: 7px;
-  width: 66px;
+  width: 84px;
   padding: 0;
   border: 0;
   background: none;
@@ -1814,7 +1857,7 @@ html.cursor-out .cursor-label {
     align-items: flex-start;
   }
   .road-bike {
-    width: 54px;
+    width: 68px;
   }
 }
 
