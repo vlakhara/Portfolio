@@ -37,7 +37,7 @@ export const projects = [
 export const experience = [
   {
     company: "Thoughtworks",
-    role: "Software Engineer",
+    role: "System Support Engineer",
     period: "Sep 2026 – Now",
     place: "Bengaluru",
     current: true,
