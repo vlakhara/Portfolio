@@ -31,6 +31,7 @@ export const projects = [
       "WebSocket",
     ],
     links: [
+      { label: "Live", href: "https://ch3ss.netlify.app" },
       { label: "Frontend", href: "https://github.com/vlakhara/chess-frontend" },
       { label: "Backend", href: "https://github.com/vlakhara/chess-backend" },
     ],
