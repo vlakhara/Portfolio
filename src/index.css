@@ -142,6 +142,161 @@ body {
   border-bottom: 2px solid var(--IRed);
 }
 
+/* Projects */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin-top: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 1.75rem;
+  line-height: 28px;
+  border: 1px solid rgba(245, 247, 248, 0.15);
+  border-radius: 12px;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.card:hover {
+  border-color: var(--IRed);
+  transform: translateY(-4px);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: var(--IRed);
+}
+
+.card-status {
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 2px 10px;
+  border: 1px solid var(--IRed);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.card-summary {
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: var(--dark);
+}
+
+.card-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: auto;
+}
+
+.card-links .more,
+.contact-links .more {
+  margin-left: 0;
+}
+
+/* Experience */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin-top: 30px;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(245, 247, 248, 0.2);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 7px);
+  top: 12px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--IRed);
+}
+
+.timeline-company {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.timeline-location {
+  font-size: 15px;
+  line-height: 24px;
+  opacity: 0.6;
+}
+
+.timeline-roles {
+  margin-top: 10px;
+}
+
+.timeline-roles li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.timeline-role {
+  color: var(--IRed);
+  font-weight: 600;
+}
+
+.timeline-period {
+  opacity: 0.6;
+}
+
+.timeline-highlights {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 28px;
+  opacity: 0.85;
+}
+
+.timeline-highlights li {
+  list-style: disc;
+  margin-left: 1.25rem;
+}
+
+/* Contact */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin-top: 25px;
+}
+
 .svgIcon > p {
   letter-spacing: 1px;
   font-size: 13px;
