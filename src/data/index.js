@@ -57,10 +57,16 @@ export const experience = [
   },
 ];
 
+// Entries with an empty `href` are hidden everywhere (floating icons and Contact).
 export const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/vipullakhara/" },
-  { label: "GitHub", href: "https://github.com/vlakhara" },
-  { label: "Facebook", href: "https://www.facebook.com/vipullakhara.01/" },
+  {
+    key: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/vipullakhara/",
+  },
+  { key: "github", label: "GitHub", href: "https://github.com/vlakhara" },
+  // TODO: add your profile URL, e.g. "https://x.com/<your-handle>"
+  { key: "x", label: "X", href: "" },
 ];
 
 // Set this to show a "Say hello" email link in the Contact section.

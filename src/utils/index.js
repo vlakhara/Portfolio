@@ -3,61 +3,27 @@ export function scrollToTop(elementId) {
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export const cursorVariants = (type, mousePosition) => {
+const FILLED = "rgba(245, 247, 248, 1)"; // --light
+const EMPTY = "rgba(245, 247, 248, 0)";
+
+const filled = (size) => ({
+  height: size,
+  width: size,
+  backgroundColor: FILLED,
+  mixBlendMode: "difference",
+});
+
+// Size and fill for each cursor state. Position is handled by <Cursor />.
+export const cursorVariants = (type) => {
   const variants = {
-    default: {
-      left: mousePosition.x - 16,
-      top: mousePosition.y - 16,
-    },
-    link: {
-      height: 60,
-      width: 60,
-      left: mousePosition.x - 30,
-      top: mousePosition.y - 30,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
-    navItem: {
-      height: 40,
-      width: 40,
-      left: mousePosition.x - 20,
-      top: mousePosition.y - 20,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
-    iconLink: {
-      height: 25,
-      width: 25,
-      left: mousePosition.x - 12.5,
-      top: mousePosition.y - 12.5,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
-    name: {
-      height: 150,
-      width: 150,
-      left: mousePosition.x - 75,
-      top: mousePosition.y - 75,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
-    scrollToTop: {
-      height: 40,
-      width: 40,
-      left: mousePosition.x - 20,
-      top: mousePosition.y - 20,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
-    skills: {
-      height: 150,
-      width: 150,
-      left: mousePosition.x - 75,
-      top: mousePosition.y - 75,
-      backgroundColor: "var(--light)",
-      mixBlendMode: "difference",
-    },
+    default: { height: 32, width: 32, backgroundColor: EMPTY },
+    link: filled(60),
+    navItem: filled(40),
+    iconLink: filled(25),
+    name: filled(150),
+    scrollToTop: filled(40),
+    skills: filled(150),
   };
 
-  return variants[type];
+  return variants[type] || variants.default;
 };

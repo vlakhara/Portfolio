@@ -2,6 +2,7 @@ import React from "react";
 import Content from "../../components/Content";
 import Header from "../../components/Header";
 import Title from "../../components/Title";
+import Databases from "./Databases.js";
 import Frameworks from "./Frameworks.js";
 import Languages from "./Languages.js";
 
@@ -12,6 +13,7 @@ const Skills = () => {
       <Content cVariant="link">
         <Languages />
         <Frameworks />
+        <Databases />
       </Content>
     </Header>
   );

@@ -36,12 +36,14 @@ const About = () => {
           </p>
           <p className="intro-main spaced-text">
             I'm <s>The</s> <name>Vipul Lakhara</name>, A Full Stack Developer
-            from Gujarat, India. I work with{" "}
+            from Gujarat, now building software at Thoughtworks in Bengaluru,
+            India. I work with{" "}
             <span className="about-skill first">React JS</span>,
+            <span className="about-skill">Next JS</span>,
             <span className="about-skill">Node JS</span>,
-            <span className="about-skill">Express JS</span>,
-            <span className="about-skill">Next JS</span>
-            <span className="about-skill last">Spring Boot</span> and
+            <span className="about-skill">Spring Boot</span>,
+            <span className="about-skill">PostgreSQL</span>
+            <span className="about-skill last">Elasticsearch</span> and
             <a
               className="more"
               href="#skills"

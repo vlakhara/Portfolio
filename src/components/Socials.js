@@ -1,38 +1,25 @@
 import {
-  faFacebook,
   faGithub,
   faLinkedin,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
 import { CursorContext } from "../Context";
+import { socialLinks } from "../data";
 
 const Socials = () => {
   const { mouseEnter, mouseLeave } = useContext(CursorContext);
 
-  const linkIcons = [
-    { icon: faLinkedin, label: "LinkedIn" },
-    { icon: faGithub, label: "Github" },
-    { icon: faFacebook, label: "Facebook" },
-  ];
+  const icons = { linkedin: faLinkedin, github: faGithub, x: faXTwitter };
 
-  const handleIconLinkClick = (type) => {
-    let url;
-    switch (type) {
-      case "LinkedIn":
-        url = "https://www.linkedin.com/in/vipullakhara/";
-        break;
-      case "Github":
-        url = "https://github.com/vlakhara";
-        break;
-      case "Facebook":
-        url = "https://www.facebook.com/vipullakhara.01/";
-        break;
-      default:
-        break;
-    }
-    window.open(url);
+  const linkIcons = socialLinks
+    .filter(({ href }) => href)
+    .map(({ key, label, href }) => ({ icon: icons[key], label, href }));
+
+  const handleIconLinkClick = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
   return (
     <div
@@ -45,7 +32,7 @@ const Socials = () => {
         gap: "1.5rem",
       }}
     >
-      {linkIcons.map(({ icon, label }, index) => (
+      {linkIcons.map(({ icon, label, href }, index) => (
         <motion.div
           key={`${label}_${index}`}
           initial={{ translateY: -20, opacity: 0 }}
@@ -68,7 +55,7 @@ const Socials = () => {
           <FontAwesomeIcon
             icon={icon}
             style={{ color: "#ecf2ff", opacity: 0.7, fontSize: "25px" }}
-            onClick={() => handleIconLinkClick(label)}
+            onClick={() => handleIconLinkClick(href)}
           />
           <div
             style={{

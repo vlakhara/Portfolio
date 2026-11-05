@@ -28,18 +28,20 @@ const Contact = () => {
                 </a>
               </li>
             )}
-            {socialLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  className="more"
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {socialLinks
+              .filter((link) => link.href)
+              .map((link) => (
+                <li key={link.label}>
+                  <a
+                    className="more"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
           </ul>
         </div>
       </Content>
