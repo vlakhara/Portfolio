@@ -46,7 +46,7 @@ export const experience = [
   {
     company: "Lanatus Systems LLP",
     role: "Software Development Engineer",
-    period: "Jun 2023 – 2026",
+    period: "Jun 2023 – Sep 2026",
     place: "",
     current: false,
     highlights: [],
