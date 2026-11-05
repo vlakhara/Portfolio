@@ -12,7 +12,7 @@ const TailwindCssIcon = ({ height = 50, width = 50 }) => {
       className="svgIcon"
     >
       <svg
-        fill="var(--light)"
+        fill="currentColor"
         height={height}
         width={width}
         viewBox="0 0 24 24"
@@ -33,11 +33,6 @@ const TailwindCssIcon = ({ height = 50, width = 50 }) => {
           ></path>
         </g>
       </svg>
-      <p
-        style={{ color: "var(--light)", letterSpacing: "2px", fontWeight: 600 }}
-      >
-        Tailwind
-      </p>
     </div>
   );
 };

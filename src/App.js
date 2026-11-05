@@ -1,29 +1,37 @@
 import React from "react";
+import BikeRoad from "./components/BikeRoad";
+import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
-import ScrollToTop from "./components/ScrollToTop";
-import Socials from "./components/Socials";
-import Navbar from "./components/navbar";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Experience from "./pages/experience";
-import Home from "./pages/home";
-import Projects from "./pages/projects";
-import Skills from "./pages/skills";
+import Experience from "./components/Experience";
+import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
+import Nav from "./components/Nav";
+import OffTheClock from "./components/OffTheClock";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import { useReveal } from "./hooks";
 
 const App = () => {
+  useReveal();
+
   return (
-    <div className="app">
-      <ScrollToTop />
+    <>
+      <a className="skip" href="#main">
+        Skip to content
+      </a>
       <Cursor />
-      <Socials />
-      <Navbar />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-    </div>
+      <Nav />
+      <main id="main">
+        <Hero />
+        <Marquee />
+        <Projects />
+        <Skills />
+        <Experience />
+        <OffTheClock />
+        <Contact />
+      </main>
+      <BikeRoad />
+    </>
   );
 };
 

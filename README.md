@@ -1,10 +1,10 @@
 # Vipul Lakhara | Portfolio
 
-Personal portfolio built with React, Framer Motion and Font Awesome.
+A one-page portfolio built with React (Create React App). No animation library: the 3D board, tilt cards, cursor and bike are plain CSS and a little JavaScript.
 
 ## Editing content
 
-Projects, experience and contact links live in `src/data/index.js`. The page components only render that data.
+Projects, experience, social links, email and favourite movies live in `src/data/index.js`. The components only render that data.
 
 ## Scripts
 
