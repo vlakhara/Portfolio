@@ -1,7 +1,9 @@
 import React from "react";
+import { SiNextdotjs, SiNodedotjs } from "react-icons/si";
+import BrandIcon from "../../Icons/BrandIcon";
+import ExpressJsIcon from "../../Icons/ExpressJsIcon";
 import ReactIcon from "../../Icons/ReactIcon";
 import SpringBootIcon from "../../Icons/SpringBootIcon";
-import ExpressJsIcon from "../../Icons/ExpressJsIcon";
 import TailwindCssIcon from "../../Icons/TailwindCssIcon";
 
 const Frameworks = () => {
@@ -14,13 +16,16 @@ const Frameworks = () => {
         style={{
           marginTop: "20px",
           display: "flex",
+          flexWrap: "wrap",
           gap: "2rem",
           marginLeft: "15px",
         }}
       >
         <ReactIcon />
-        <SpringBootIcon />
+        <BrandIcon icon={SiNextdotjs} label="Next JS" />
+        <BrandIcon icon={SiNodedotjs} label="Node JS" />
         <ExpressJsIcon />
+        <SpringBootIcon />
         <TailwindCssIcon />
       </div>
     </div>

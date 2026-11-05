@@ -1,40 +1,31 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
 
+// Only the cursor *variant* lives in React state. The pointer position is
+// tracked inside the Cursor component with motion values, so moving the mouse
+// never re-renders the rest of the app.
 export const CursorContext = createContext({
-  mousePosition: {},
-  cursorVariant: "",
+  cursorVariant: "default",
   mouseEnter: (type) => {},
   mouseLeave: () => {},
 });
 
 const Provider = ({ children }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
 
-  useEffect(() => {
-    const mouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
-    window.addEventListener("mousemove", mouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", mouseMove);
-    };
+  const mouseEnter = useCallback((type) => {
+    setCursorVariant(type);
+  }, []);
+  const mouseLeave = useCallback(() => {
+    setCursorVariant("default");
   }, []);
 
-  const mouseEnter = (type) => {
-    setCursorVariant(type);
-  };
-  const mouseLeave = () => {
-    setCursorVariant("default");
-  };
+  const value = useMemo(
+    () => ({ cursorVariant, mouseEnter, mouseLeave }),
+    [cursorVariant, mouseEnter, mouseLeave]
+  );
 
   return (
-    <CursorContext.Provider
-      value={{ cursorVariant, mouseEnter, mouseLeave, mousePosition }}
-    >
-      {children}
-    </CursorContext.Provider>
+    <CursorContext.Provider value={value}>{children}</CursorContext.Provider>
   );
 };
 
