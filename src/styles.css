@@ -1542,7 +1542,7 @@ html.cursor-out .cursor-label {
 
 /* bike */
 .bike {
-  --khaki: #6f7b3e;
+  --khaki: #5d6b35;
   display: block;
   width: 100%;
   height: auto;
@@ -1632,7 +1632,7 @@ html.cursor-out .cursor-label {
 
 .bike .silencer {
   fill: none;
-  stroke: #9a9a92;
+  stroke: #26231e;
   stroke-width: 6;
   stroke-linecap: round;
 }
@@ -1651,9 +1651,32 @@ html.cursor-out .cursor-label {
   stroke-linejoin: round;
 }
 
-.bike .pad {
-  fill: var(--ink);
-  opacity: 0.8;
+.bike .panel {
+  fill: #d8d6c8;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.bike .fork {
+  fill: none;
+  stroke: #d9a21b;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+}
+
+.bike .header {
+  fill: none;
+  stroke: #b9b9b0;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.bike .shield {
+  fill: none;
+  stroke: #d8d6c8;
+  stroke-width: 3;
+  stroke-linecap: round;
 }
 
 .bike .lamp {
