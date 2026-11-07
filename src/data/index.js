@@ -3,7 +3,7 @@
 
 export const profile = {
   name: "Vipul Lakhara",
-  role: "Software engineer",
+  role: "System Support Engineer",
   company: "Thoughtworks",
   city: "Bengaluru",
 };
